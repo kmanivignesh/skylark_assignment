@@ -35,7 +35,7 @@ export default function Login() {
             <BarChart3 className="w-7 h-7 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-white">Welcome back</h1>
-          <p className="text-white/50 mt-2">Sign in to your Skylark BI account</p>
+          <p className="text-white/50 mt-2">Sign in to your Skylark Insight account</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

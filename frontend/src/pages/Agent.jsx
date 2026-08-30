@@ -46,7 +46,7 @@ export default function Agent() {
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center mb-6">
               <Bot className="w-8 h-8 text-white" />
             </div>
-            <h1 className="text-3xl font-bold text-white mb-2">Skylark BI Agent</h1>
+            <h1 className="text-3xl font-bold text-white mb-2">Skylark Insight</h1>
             <p className="text-white/50">Ask a question about your Monday.com data.</p>
           </div>
         ) : (

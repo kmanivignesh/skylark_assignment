@@ -20,7 +20,7 @@ export default function Navbar() {
               <BarChart3 className="w-4 h-4 text-white" />
             </div>
             <span className="text-lg font-bold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
-              Skylark BI Agent
+               Skylark Insight
             </span>
           </Link>
 

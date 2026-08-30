@@ -56,7 +56,7 @@ app.use((err, req, res, next) => {
 async function start() {
   await initDB();
   app.listen(PORT, () => {
-    console.log(`Skylark BI Agent backend running on port ${PORT}`);
+    console.log(`Skylark Insight backend running on port ${PORT}`);
   });
 }
 

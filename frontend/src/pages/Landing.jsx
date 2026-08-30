@@ -28,7 +28,7 @@ export default function Landing() {
 
           <h1 className="text-5xl sm:text-7xl font-extrabold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-              Skylark BI Agent
+               Skylark Insight
             </span>
           </h1>
 

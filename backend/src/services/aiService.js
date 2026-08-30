@@ -39,7 +39,7 @@ const ALLOWED_METRICS = [
   'cross_board_sector', 'leadership_summary',
 ];
 
-const SYSTEM_PROMPT_QUERY_UNDERSTANDING = `You are a business intelligence query analyzer for Skylark Drones.
+const SYSTEM_PROMPT_QUERY_UNDERSTANDING = `You are a business intelligence query analyzer for Skylark Insight.
 
 Your job is to understand the user's business question and create a structured query plan.
 
@@ -68,7 +68,7 @@ If the question is ambiguous and truly unclear, use intent "clarification_needed
 If it's a greeting or off-topic, use intent "general_question".
 Prefer giving an answer over asking for clarification — only ask when genuinely necessary.`;
 
-const SYSTEM_PROMPT_RESPONSE = `You are Skylark BI Agent, an executive business intelligence assistant for Skylark Drones.
+const SYSTEM_PROMPT_RESPONSE = `You are Skylark Insight, an executive business intelligence assistant.
 
 Generate a concise, founder-level business insight response based on the calculated metrics provided.
 

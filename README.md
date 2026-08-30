@@ -1,11 +1,11 @@
-# Skylark BI Agent
+# Skylark Insight
 
 A Conversational Business Intelligence Agent built for the Skylark Drones technical assignment. This application allows founders and executives to ask natural-language business questions about their company data stored directly in Monday.com.
 
 ---
 
 ## 1. Project Overview
-The Skylark BI Agent bridges the gap between raw, messy operational data and high-level executive decision-making. Instead of manually exporting CSVs and running pivot tables, executives can chat with an AI agent that understands the business context. 
+Skylark Insight bridges the gap between raw, messy operational data and high-level executive decision-making. Instead of manually exporting CSVs and running pivot tables, executives can chat with an AI agent that understands the business context.
 
 The application dynamically pulls live data from Monday.com (Deals and Work Orders boards), normalizes missing or messy fields on the fly, runs deterministic calculations server-side, and uses an LLM to explain the resulting metrics in clear, founder-friendly language.
 
