@@ -164,10 +164,10 @@ Generate a concise executive business intelligence response.`;
       ],
       config: {
         temperature: 0.3,
-        maxOutputTokens: 800,
       }
     });
 
+    console.log('AI Response:', response.text);
     return response.text;
   } catch (err) {
     console.error('Response generation error:', err);
