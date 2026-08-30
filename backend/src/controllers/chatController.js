@@ -125,18 +125,16 @@ async function chat(req, res) {
       return res.json({
         response: `We couldn't retrieve your Monday.com data right now. ${dataErr.message}`,
         queryPlan,
-        dataQuality: [],
         metrics: null,
       });
     }
 
-    const { deals, workOrders, dataQuality } = allData;
+    const { deals, workOrders } = allData;
 
     if (deals.length === 0 && workOrders.length === 0) {
       return res.json({
-        response: "I don't have any data to analyze yet. Please make sure your Monday.com boards (Deals and Work Orders) are properly connected and contain data.",
+        response: "I'm sorry, I couldn't find any relevant data to answer that.",
         queryPlan,
-        dataQuality: ['No data available from Monday.com boards.'],
         metrics: null,
       });
     }
@@ -146,13 +144,12 @@ async function chat(req, res) {
 
     // Step 4: Generate Response
     const response = await aiService.generateResponse(
-      message, queryPlan, calculatedMetrics, dataQuality
+      message, queryPlan, calculatedMetrics
     );
 
     res.json({
       response,
       queryPlan,
-      dataQuality,
       metrics: calculatedMetrics,
     });
   } catch (err) {

@@ -81,7 +81,7 @@ Rules:
 - Keep responses focused — max 200 words for simple queries, 400 for complex/leadership updates
 - Never fabricate data not present in the metrics
 - If data is limited (e.g., many missing values), mention it
-- Reference the data quality warnings naturally
+- Reference any obvious limitations in the data naturally
 - Do NOT repeat raw JSON — translate into natural business language
 - Use "we" and "our" to sound like an internal advisor`;
 
@@ -140,12 +140,9 @@ async function understandQuery(question, conversationHistory = []) {
 /**
  * Generate executive-level response from calculated metrics
  */
-async function generateResponse(question, queryPlan, calculatedMetrics, dataQuality) {
+async function generateResponse(question, queryPlan, calculatedMetrics) {
   try {
     const metricsContext = JSON.stringify(calculatedMetrics, null, 2);
-    const qualityContext = dataQuality.length > 0
-      ? `\n\nData Quality Warnings:\n${dataQuality.map(w => `- ${w}`).join('\n')}`
-      : '';
 
     const userPrompt = `User Question: ${question}
 
@@ -153,7 +150,6 @@ Query Plan Intent: ${queryPlan.intent}
 
 Calculated Metrics:
 ${metricsContext}
-${qualityContext}
 
 Generate a concise executive business intelligence response.`;
 

@@ -102,14 +102,13 @@ async function getAllData() {
   }
 
   const [deals, workOrders] = await Promise.all([
-    getDeals().catch(err => ({ records: [], dataQuality: [`Deals: ${err.message}`] })),
-    getWorkOrders().catch(err => ({ records: [], dataQuality: [`Work Orders: ${err.message}`] })),
+    getDeals().catch(err => ({ records: [] })),
+    getWorkOrders().catch(err => ({ records: [] })),
   ]);
 
   return {
     deals: deals.records,
     workOrders: workOrders.records,
-    dataQuality: [...(deals.dataQuality || []), ...(workOrders.dataQuality || [])],
   };
 }
 
