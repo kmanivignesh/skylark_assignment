@@ -14,6 +14,30 @@ The application dynamically pulls live data from Monday.com (Deals and Work Orde
 ## 2. Architecture
 The application is built using a decoupled Client-Server architecture to ensure scalability and security.
 
+```mermaid
+graph TD
+    subgraph Frontend [Client-Side]
+        UI[React 18 + Tailwind CSS]
+    end
+
+    subgraph Backend [Server-Side]
+        API[Node.js + Express.js]
+        DB[(SQLite Database)]
+        Engine[Analytics Engine & Normalizer]
+    end
+
+    subgraph External [External APIs]
+        Monday[Monday.com GraphQL API]
+        Gemini[Google Gemini API]
+    end
+
+    UI <-->|REST API| API
+    API <-->|User Auth| DB
+    API <-->|Fetch Raw Data| Monday
+    API <-->|Query Plan & Final Summary| Gemini
+    API --- Engine
+```
+
 ### Frontend (Client)
 * **Tech Stack:** React 18, Vite, Tailwind CSS (v4)
 * **Purpose:** Provides a premium, responsive UI for authentication, connection management, and the AI chat interface.

@@ -5,8 +5,12 @@ async function request(path, options = {}) {
   const headers = { 'Content-Type': 'application/json', ...options.headers };
   if (token) headers['Authorization'] = `Bearer ${token}`;
 
-  const res = await fetch(`${API_BASE}${path}`, { ...options, headers });
-  const data = await res.json();
+  let data;
+  try {
+    data = await res.json();
+  } catch (err) {
+    throw new Error(`Failed to parse response from ${API_BASE}${path}. Make sure VITE_API_URL is correct!`);
+  }
 
   if (!res.ok) {
     throw new Error(data.error || data.message || 'Request failed');
